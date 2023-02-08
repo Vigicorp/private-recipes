@@ -39,7 +39,7 @@
                 "config/routes/vigicorp_import.yaml": {
                     "contents": [
                         "vigicorp_import:",
-                        "      resource: \"@VigicorpImportBundle/src/Controller/\"",
+                        "      resource: '@VigicorpImportBundle/src/Controller/'",
                         "      type: attribute",
                         "      prefix: /admin # Change if you are not in admin",
                         ""
