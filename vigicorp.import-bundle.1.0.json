@@ -6,9 +6,26 @@
                     "Vigicorp\\ImportBundle\\VigicorpImportBundle": [
                         "all"
                     ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
                 }
             },
-            "ref": "08f134947e005dbdc288a986f5064f86b385ac4b"
+            "files": {
+                "config/packages/vigicorp_import.yaml": {
+                    "contents": [
+                        "vigicorp_import:"
+                        "    imports:",
+                        "#        my_import:",
+                        "#            name: Nom de mon import",
+                        "#            service: App\Service\Import\MonService",
+                        "#            pattern: '^USER_(COM|INC)_.*\.csv$'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "84dd444bc8b359d18fa715e6ffab3ba90f7023b4"
         }
     }
 }
