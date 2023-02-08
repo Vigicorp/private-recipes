@@ -1,5 +1,8 @@
 {
     "recipes": {
+        "vigicorp/datatable-bundle": [
+            "1.0"
+        ],
         "vigicorp/import-bundle": [
             "1.0"
         ]
