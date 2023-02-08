@@ -7,8 +7,8 @@
     "branch": "main",
     "is_contrib": true,
     "_links": {
-        "repository": "github.com/Kaaly/test-recipe",
-        "origin_template": "{package}:{version}@github.com/Kaaly/test-recipe:main",
-        "recipe_template": "https://api.github.com/repos/Kaaly/test-recipe/contents/{package_dotted}.{version}.json"
+        "repository": "github.com/Vigicorp/private-recipes",
+        "origin_template": "{package}:{version}@github.com/Vigicorp/private-recipes:main",
+        "recipe_template": "https://api.github.com/repos/Vigicorp/private-recipes/contents/{package_dotted}.{version}.json"
     }
 }
