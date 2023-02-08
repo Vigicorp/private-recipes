@@ -8,7 +8,8 @@
                     ]
                 },
                 "copy-from-recipe": {
-                    "config/": "%CONFIG_DIR%"
+                    "config/": "%CONFIG_DIR%",
+                    "import/": "import/"
                 }
             },
             "files": {
@@ -23,9 +24,30 @@
                         ""
                     ],
                     "executable": false
-                }
+                },
+                "import/.gitignore": {
+                    "contents": [
+                        "# .gitignore sample",
+                        "# Ignore all files in this dir...",
+                        "*",
+                        "",
+                        "# ... except for this one.",
+                        "!.gitignore"
+                    ],
+                    "executable": false
+                },
+                "config/routes/vigicorp_import.yaml": {
+                    "contents": [
+                        "vigicorp_import:",
+                        "      resource: \"@VigicorpImportBundle/src/Controller/\"",
+                        "      type: attribute",
+                        "      prefix: /admin # Change if you are not in admin",
+                        ""
+                    ],
+                    "executable": false
+                },
             },
-            "ref": "84dd444bc8b359d18fa715e6ffab3ba90f7023b4"
+            "ref": "d6fd2633122f76b5d57bb1232380d290daf34d04"
         }
     }
 }
