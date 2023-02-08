@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "vigicorp/import-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\ImportBundle\\VigicorpImportBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "08f134947e005dbdc288a986f5064f86b385ac4b"
+        }
+    }
+}
