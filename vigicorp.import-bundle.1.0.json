@@ -19,7 +19,7 @@
                         "#        my_import:",
                         "#            name: Nom de mon import",
                         "#            service: App\\Service\\Import\\MonService",
-                        "#            pattern: '^USER_(COM|INC)_.*\.csv$'",
+                        "#            pattern: '^USER_(COM|INC)_.*\\.csv$'",
                         ""
                     ],
                     "executable": false
