@@ -12,7 +12,11 @@
                 },
                 "composer-scripts": {
                     "tinymce:install": "symfony-cmd"
-                }
+                },
+                "gitignore": [
+                    "public/uploads/*",
+                    "!public/uploads/.htaccess"
+                ]
             },
             "files": {
                 "config/packages/vigicorp_tools.yaml": {
@@ -35,6 +39,13 @@
                         "vigicorp_tools:",
                         "      resource: '@VigicorpToolsBundle/src/Controller/'",
                         "      type: attribute",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "public/upload/.htaccess": {
+                    "contents": [
+                        "Deny from all",
                         ""
                     ],
                     "executable": false
