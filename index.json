@@ -6,6 +6,9 @@
         "vigicorp/import-bundle": [
             "1.0"
         ]
+        "vigicorp/tools-bundle": [
+            "1.1"
+        ]
     },
     "branch": "main",
     "is_contrib": true,

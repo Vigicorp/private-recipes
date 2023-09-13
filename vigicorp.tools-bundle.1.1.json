@@ -1,0 +1,46 @@
+{
+    "manifests": {
+        "vigicorp/tools-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\ToolsBundle\\VigicorpToolsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                }
+            },
+            "files": {
+                "config/packages/vigicorp_datatable.yaml": {
+                    "contents": [
+                        "vigicorp_tools:",
+                        "    tiny_mce:",
+                        "        plugins: ['advlist', 'autolink', 'link', 'image', 'lists', 'preview', 'code', 'fullscreen', 'media', 'table']",
+                        "        toolbar: 'undo redo | blocks | bold italic underline | align | bullist numlist outdent indent'",
+                        "        menu:",
+                        "            view: {title: 'View', items: 'preview fullscreen code'}",
+                        "            edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext'}",
+                        "            insert: {title: 'Insert', items: 'image link media pageembed inserttable'}",
+                        "            format: {title: 'Format', items: 'bold italic underline | blocks align'}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/vigicorp_tools.yaml": {
+                    "contents": [
+                        "vigicorp_tools:",
+                        "      resource: '@VigicorpToolsBundle/src/Controller/'",
+                        "      type: attribute",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "composer-scripts": {
+                "tinymce:install": "symfony-cmd"
+            },
+            "ref": "d6fd2633122f76b5d57bb1232380d290daf34d04"
+        }
+    }
+}
