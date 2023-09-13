@@ -12,7 +12,7 @@
                 }
             },
             "files": {
-                "config/packages/vigicorp_datatable.yaml": {
+                "config/packages/vigicorp_tools.yaml": {
                     "contents": [
                         "vigicorp_tools:",
                         "    tiny_mce:",
