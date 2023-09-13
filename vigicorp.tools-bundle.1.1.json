@@ -46,8 +46,9 @@
                 },
                 "public/uploads/.htaccess": {
                     "contents": [
-                        "Deny from all",
-                        ""
+                        "<Files *.php>",
+                        "deny from all",
+                        "</Files>",
                     ],
                     "executable": false
                 }
