@@ -8,7 +8,8 @@
                     ]
                 },
                 "copy-from-recipe": {
-                    "config/": "%CONFIG_DIR%"
+                    "config/": "%CONFIG_DIR%/",
+                    "public/": "%PUBLIC_DIR%/"
                 },
                 "composer-scripts": {
                     "tinymce:install": "symfony-cmd"
@@ -43,7 +44,7 @@
                     ],
                     "executable": false
                 },
-                "public/upload/.htaccess": {
+                "public/uploads/.htaccess": {
                     "contents": [
                         "Deny from all",
                         ""
