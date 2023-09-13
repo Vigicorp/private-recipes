@@ -48,7 +48,7 @@
                     "contents": [
                         "<Files *.php>",
                         "deny from all",
-                        "</Files>",
+                        "</Files>"
                     ],
                     "executable": false
                 }
