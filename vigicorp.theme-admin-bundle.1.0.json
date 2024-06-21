@@ -95,6 +95,9 @@
                         "// Customisable colors (use this to define customer theme main colors)",
                         "@import \"variables\";",
                         "",
+                        "// Admin theme",
+                        "@import \"../../../vendor/vigicorp/theme-admin-bundle/assets/scss/theme_admin\";",
+                        "",
                         "// Custom code",
                         ""
                     ],
@@ -112,7 +115,7 @@
                     "executable": false
                 }
             },
-            "ref": "c811ce3f9f518e1d9e713dc6e7e99e3434587252"
+            "ref": "e32abf046974ae8a5d16f4542dbf6c83ccca11eb"
         }
     }
 }
