@@ -1,0 +1,59 @@
+{
+    "manifests": {
+        "vigicorp/theme-admin-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\ThemeAdminBundle\\VigicorpThemeAdminBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "assets/": "assets/"
+                },
+                "add-lines": [
+                    {
+                        "file": "package.json",
+                        "content": "        \"treeselectjs\": \"^0.10.0\",",
+                        "position": "after_target",
+                        "target": "    \"dependencies\": {",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "assets/js/admin.js",
+                        "content": "\n// Import basecart\nimport '../../../vendor/basecart/basecart-bundle/assets/js/admin';",
+                        "position": "after_target",
+                        "target": "src/Resources/js/data-list",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "assets/entrypoint/app.js": {
+                    "contents": [
+                        "/* JS */",
+                        "import '../js/app/index';",
+                        "",
+                        "/* CSS */",
+                        "import '../scss/app/index.scss';"
+                    ],
+                    "executable": false
+                },
+                "assets/js/app/index.js": {
+                    "contents": [
+                        "// Import basecart",
+                        "import '../../../vendor/basecart/basecart-bundle/assets/js/front';",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/scss/app/index.scss": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "d6fd2633122f76b5d57bb1232380d290daf34d04"
+        }
+    }
+}
