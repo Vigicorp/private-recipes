@@ -3,7 +3,7 @@
         "basecart/basecart-bundle": {
             "manifest": {
                 "bundles": {
-                    "Vigicorp\\ThemeAdminBundle\\VigicorpThemeAdminBundle": [
+                    "BaseCart\\BaseCartBundle\\BaseCartBundle": [
                         "all"
                     ]
                 },
