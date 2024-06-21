@@ -8,7 +8,82 @@
                     ]
                 },
                 "copy-from-recipe": {
-                    "vigicorp/theme-admin-bundle/1.0/assets/": "assets/"
+                    "assets/": "assets/"
+                },
+                "add-lines": [
+                    {
+                        "file": "webpack.config.js",
+                        "content": "    .addEntry('admin', './assets/entrypoint/admin.js')\n\n    // Copy images\n    .copyFiles({\n        from: './assets/images',\n        to: 'images/[path][name].[hash:8].[ext]',\n        pattern: /\\.(png|jpg|jpeg|svg)$/\n    })",
+                        "position": "after_target",
+                        "target": "    .addEntry('app', './assets/app.js')",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "webpack.config.js",
+                        "content": "    .enableSassLoader()",
+                        "position": "after_target",
+                        "target": "    //.enableSassLoader()",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "assets/entrypoint/admin.js": {
+                    "contents": [
+                        "/* JS */",
+                        "import '../js/admin/index';",
+                        "",
+                        "/* CSS */",
+                        "import '../scss/admin/index.scss';"
+                    ],
+                    "executable": false
+                },
+                "assets/js/admin/index.js": {
+                    "contents": [
+                        "// Import theme admin base",
+                        "import '../../../vendor/vigicorp/theme-admin-bundle/assets/js/theme_admin';",
+                        "",
+                        "// Import datatable",
+                        "import 'datatables.net-bs5';",,
+                        "import {dataList} from '../../../vendor/vigicorp/datatable-bundle/src/Resources/js/data-list';"
+                        "",
+                        "document.addEventListener('DOMContentLoaded', () => {",
+                        "    // Init datalist",
+                        "    dataList.init();",
+                        "});",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/scss/images/.gitkeep": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/scss/admin/_variables.scss": {
+                    "contents": [
+                        "// Change bootstrap variables (colors, etc...)",
+                        "// $primary :#XXXXXX;",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/scss/admin/index.scss": {
+                    "contents": [
+                        "// Datatable",
+                        "@import \"~datatables.net-bs5\";",
+                        "",
+                        "// BOOTSTRAP V.: 5.3",
+                        "@import \"~bootstrap/scss/functions\";",
+                        "",
+                        "// Customisable colors (use this to define customer theme main colors)",
+                        "@import \"variables\";",
+                        "",
+                        "// Custom code",
+                        ""
+                    ],
+                    "executable": false
                 }
             },
             "ref": "d6fd2633122f76b5d57bb1232380d290daf34d04"
