@@ -44,8 +44,8 @@
                         "import '../../../vendor/vigicorp/theme-admin-bundle/assets/js/theme_admin';",
                         "",
                         "// Import datatable",
-                        "import 'datatables.net-bs5';",,
-                        "import {dataList} from '../../../vendor/vigicorp/datatable-bundle/src/Resources/js/data-list';"
+                        "import 'datatables.net-bs5';",
+                        "import {dataList} from '../../../vendor/vigicorp/datatable-bundle/src/Resources/js/data-list';",
                         "",
                         "document.addEventListener('DOMContentLoaded', () => {",
                         "    // Init datalist",
