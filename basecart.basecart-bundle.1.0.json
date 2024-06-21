@@ -9,7 +9,8 @@
                 },
                 "copy-from-recipe": {
                     "assets/": "assets/",
-                    "config/": "%CONFIG_DIR%/"
+                    "config/": "%CONFIG_DIR%/",
+                    "src/": "%SRC_DIR%/"
                 },
                 "add-lines": [
                     {
@@ -67,6 +68,27 @@
                     ],
                     "executable": false
                 },
+                "config/routes/basecart.yaml": {
+                    "contents": [
+                        "basecart_admin_controllers:",
+                        "    resource: '@BaseCartBundle/src/Admin/Controller/'",
+                        "    type: attribute",
+                        "    prefix: /admin",
+                        "    name_prefix: basecart_admin_",
+                        "basecart_front_controllers:",
+                        "    resource: '@BaseCartBundle/src/Controller/'",
+                        "    type: attribute",
+                        "    name_prefix: basecart_",
+                        "# Use to add another controller on admin or override basecart existing controllers",
+                        "admin_controllers:",
+                        "    resource: ../../src/Admin/Controller/",
+                        "    type: attribute",
+                        "    prefix: /admin",
+                        "    name_prefix: basecart_admin_",
+                        ""
+                    ],
+                    "executable": false
+                },
                 "config/packages/basecart.yaml": {
                     "contents": [
                         "basecart:",
@@ -84,9 +106,15 @@
                         ""
                     ],
                     "executable": false
+                },
+                "src/Admin/Controller/.gitkeep": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
                 }
             },
-            "ref": "c811ce3f9f518e1d9e713dc6e7e99e3434587252"
+            "ref": "e32abf046974ae8a5d16f4542dbf6c83ccca11eb"
         }
     }
 }
