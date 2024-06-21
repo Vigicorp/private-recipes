@@ -21,7 +21,7 @@
                     },
                     {
                         "file": "package.json",
-                        "content": "    \"dependencies\": {\n        \"bootstrap\": \"^5.3.3\",\n        \"datatables.net-bs5\": \"^1.13.0\",\n        \"jquery\": \"^3.7.1\",\n        \"tom-select\": \"^2.3.1\"\n    },",
+                        "content": "    \"dependencies\": {\n        \"@mdi/font\": \"^7.4.47\",\n        \"bootstrap\": \"^5.3.3\",\n        \"datatables.net-bs5\": \"^1.13.0\",\n        \"jquery\": \"^3.7.1\",\n        \"tom-select\": \"^2.3.1\"\n    },",
                         "position": "after_target",
                         "target": "    \"private\": true,",
                         "warn_if_missing": true
@@ -79,7 +79,8 @@
                 "assets/scss/admin/_variables.scss": {
                     "contents": [
                         "// Change bootstrap variables (colors, etc...)",
-                        "// $primary :#XXXXXX;",
+                        "$primary :#XXXXXX;",
+                        "$primary-button-text-color: white;",
                         ""
                     ],
                     "executable": false
