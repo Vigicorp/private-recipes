@@ -19,7 +19,7 @@
                         "warn_if_missing": true
                     },
                     {
-                        "file": "assets/js/admin.js",
+                        "file": "assets/js/admin/index.js",
                         "content": "\n// Import basecart\nimport '../../../vendor/basecart/basecart-bundle/assets/js/admin';",
                         "position": "after_target",
                         "target": "src/Resources/js/data-list",
