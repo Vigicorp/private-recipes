@@ -1,6 +1,6 @@
 {
     "manifests": {
-        "vigicorp/theme-admin-bundle": {
+        "basecart/basecart-bundle": {
             "manifest": {
                 "bundles": {
                     "Vigicorp\\ThemeAdminBundle\\VigicorpThemeAdminBundle": [
