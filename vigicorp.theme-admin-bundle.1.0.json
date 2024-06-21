@@ -8,7 +8,8 @@
                     ]
                 },
                 "copy-from-recipe": {
-                    "assets/": "assets/"
+                    "assets/": "assets/",
+                    "config/": "%CONFIG_DIR%/"
                 },
                 "add-lines": [
                     {
@@ -95,6 +96,17 @@
                         "@import \"variables\";",
                         "",
                         "// Custom code",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/theme_admin.yaml": {
+                    "contents": [
+                        "theme_admin:",
+                        "    project_name: MON PROJET",
+                        "    default_route: admin_default",
+                        "# Uncomment and set recovery password route to show link on login page",
+                        "#    recovery_password_route:",
                         ""
                     ],
                     "executable": false

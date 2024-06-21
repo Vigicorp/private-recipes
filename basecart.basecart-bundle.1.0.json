@@ -8,7 +8,8 @@
                     ]
                 },
                 "copy-from-recipe": {
-                    "assets/": "assets/"
+                    "assets/": "assets/",
+                    "config/": "%CONFIG_DIR%/"
                 },
                 "add-lines": [
                     {
@@ -23,6 +24,20 @@
                         "content": "\n// Import basecart\nimport '../../../vendor/basecart/basecart-bundle/assets/js/admin';",
                         "position": "after_target",
                         "target": "src/Resources/js/data-list",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "config/packages/security.yaml",
+                        "content": "        basecart_admin:\n            pattern: ^(/admin|/vigicorp-datatable-bundle/basecart_)\n            lazy: true\n            provider: basecart_admin_provider\n            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }\n            form_login:\n                login_path: basecart_admin_login\n                check_path: basecart_admin_login\n                default_target_path: basecart_admin_default\n            logout:\n                path: basecart_admin_logout\n                target: basecart_admin_login\n                invalidate_session: false\n        basecart_shop_user:\n            lazy: true\n            provider: basecart_shop_user_provider\n            form_login:\n                login_path: basecart_login\n                check_path: basecart_login\n            logout:\n                path: basecart_logout\n                target: basecart_login\n                invalidate_session: false",
+                        "position": "after_target",
+                        "target": "security: false",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "config/packages/security.yaml",
+                        "content": "         - { path: ^/admin/connexion, roles: PUBLIC_ACCESS }\n         - { path: ^/admin/deconnexion, roles: PUBLIC_ACCESS }\n         - { path: ^/admin/mot-de-passe-oublie, roles: PUBLIC_ACCESS }",
+                        "position": "after_target",
+                        "target": "access_control:",
                         "warn_if_missing": true
                     }
                 ]
@@ -48,6 +63,24 @@
                 },
                 "assets/scss/app/index.scss": {
                     "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/basecart.yaml": {
+                    "contents": [
+                        "basecart:",
+                        "    overridden_entities:",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/theme_admin.yaml": {
+                    "contents": [
+                        "theme_admin:",
+                        "    project_name: BaseCart",
+                        "    default_route: basecart_admin_default",
+                        "    recovery_password_route: basecart_admin_default",
                         ""
                     ],
                     "executable": false
