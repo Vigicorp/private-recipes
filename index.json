@@ -8,6 +8,9 @@
         ],
         "vigicorp/tools-bundle": [
             "1.1"
+        ],
+        "vigicorp/theme-admin-bundle": [
+            "1.0"
         ]
     },
     "branch": "main",
