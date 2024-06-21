@@ -1,5 +1,8 @@
 {
     "recipes": {
+        "basecart/basecart-bundle": [
+            "1.0"
+        ],
         "vigicorp/datatable-bundle": [
             "1.0"
         ],
