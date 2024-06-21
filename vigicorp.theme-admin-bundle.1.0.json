@@ -12,6 +12,20 @@
                 },
                 "add-lines": [
                     {
+                        "file": "package.json",
+                        "content": "        \"file-loader\": \"^6.0.0\",\n        \"sass\": \"^1.77.6\",\n        \"sass-loader\": \"^14.0.0\",",
+                        "position": "after_target",
+                        "target": "    \"devDependencies\": {",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "package.json",
+                        "content": ",\n    \"dependencies\": {\n        \"bootstrap\": \"^5.3.3\",\n        \"datatables.net-bs5\": \"^1.13.0\",\n        \"jquery\": \"^3.7.1\",\n        \"tom-select\": \"^2.3.1\"\n    }",
+                        "position": "after_target",
+                        "target": "    }",
+                        "warn_if_missing": true
+                    },
+                    {
                         "file": "webpack.config.js",
                         "content": "    .addEntry('admin', './assets/entrypoint/admin.js')\n\n    // Copy images\n    .copyFiles({\n        from: './assets/images',\n        to: 'images/[path][name].[hash:8].[ext]',\n        pattern: /\\.(png|jpg|jpeg|svg)$/\n    })",
                         "position": "after_target",
