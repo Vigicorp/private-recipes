@@ -12,6 +12,10 @@
                     "config/": "%CONFIG_DIR%/",
                     "src/": "%SRC_DIR%/"
                 },
+                "gitignore": [
+                    "/public/sitemap.xml",
+                    "/public/sitemap.*.xml"
+                ],
                 "add-lines": [
                     {
                         "file": "package.json",
@@ -114,7 +118,7 @@
                     "executable": false
                 }
             },
-            "ref": "e32abf046974ae8a5d16f4542dbf6c83ccca11eb"
+            "ref": "5e028d76968b095d92d14d3c75549bb08aef97d5"
         }
     }
 }
