@@ -1,0 +1,18 @@
+{
+    "manifests": {
+        "basecart/payment-stripe-bundle": {
+            "manifest": {
+                "bundles": {
+                    "BaseCart\\PaymentStripeBundle\\PaymentStripeBundle": [
+                        "all"
+                    ]
+                },
+                "env": {
+                    "BASECART_STRIPE_SECRET_KEY": "",
+                    "BASECART_STRIPE_WEBHOOK_ID": ""
+                }
+            },
+            "ref": "5e028d76968b095d92d14d3c75549bb08aef97d5"
+        }
+    }
+}
