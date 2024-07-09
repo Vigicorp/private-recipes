@@ -106,7 +106,6 @@
                         "theme_admin:",
                         "    project_name: BaseCart",
                         "    default_route: basecart_admin_default",
-                        "    recovery_password_route: basecart_admin_default",
                         ""
                     ],
                     "executable": false
