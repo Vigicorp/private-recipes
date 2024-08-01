@@ -9,8 +9,7 @@
                 },
                 "copy-from-recipe": {
                     "assets/": "assets/",
-                    "config/": "%CONFIG_DIR%/",
-                    "templates/": "templates/"
+                    "config/": "%CONFIG_DIR%/"
                 },
                 "add-lines": [
                     {
@@ -22,7 +21,7 @@
                     },
                     {
                         "file": "package.json",
-                        "content": "    \"dependencies\": {\n        \"@mdi/font\": \"^7.4.47\",\n        \"bootstrap\": \"^5.3.3\",\n        \"datatables.net-bs5\": \"^1.13.0\",\n        \"jquery\": \"^3.7.1\",\n        \"mjml\": \"^4.15.3\",\n        \"tom-select\": \"^2.3.1\"\n    },",
+                        "content": "    \"dependencies\": {\n        \"@mdi/font\": \"^7.4.47\",\n        \"bootstrap\": \"^5.3.3\",\n        \"datatables.net-bs5\": \"^1.13.0\",\n        \"jquery\": \"^3.7.1\",\n        \"tom-select\": \"^2.3.1\"\n    },",
                         "position": "after_target",
                         "target": "    \"private\": true,",
                         "warn_if_missing": true
@@ -121,19 +120,9 @@
                         ""
                     ],
                     "executable": false
-                },
-                "templates/bundles/VigicorpThemeAdminBundle/email": {
-                    "contents": [
-                        "{% extends '@!VigicorpThemeAdmin/email/base.mjml.twig' %}",
-                        "",
-                        "{% set email_color_text = \"dark\" %}",
-                        "{% set email_color_bg = \"lightgrey\" %}",
-                        ""
-                    ],
-                    "executable": false
                 }
             },
-            "ref": "851bc3d4249adc2c0048b46ba3bde2060f1049ac"
+            "ref": "e32abf046974ae8a5d16f4542dbf6c83ccca11eb"
         }
     }
 }
