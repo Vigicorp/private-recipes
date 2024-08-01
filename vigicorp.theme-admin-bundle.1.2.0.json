@@ -1,0 +1,139 @@
+{
+    "manifests": {
+        "vigicorp/theme-admin-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\ThemeAdminBundle\\VigicorpThemeAdminBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "assets/": "assets/",
+                    "config/": "%CONFIG_DIR%/",
+                    "templates/": "templates/"
+                },
+                "add-lines": [
+                    {
+                        "file": "package.json",
+                        "content": "        \"file-loader\": \"^6.0.0\",\n        \"sass\": \"^1.77.6\",\n        \"sass-loader\": \"^14.0.0\",",
+                        "position": "after_target",
+                        "target": "    \"devDependencies\": {",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "package.json",
+                        "content": "    \"dependencies\": {\n        \"@mdi/font\": \"^7.4.47\",\n        \"bootstrap\": \"^5.3.3\",\n        \"datatables.net-bs5\": \"^1.13.0\",\n        \"jquery\": \"^3.7.1\",\n        \"mjml\": \"^4.15.3\",\n        \"tom-select\": \"^2.3.1\"\n    },",
+                        "position": "after_target",
+                        "target": "    \"private\": true,",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "webpack.config.js",
+                        "content": "    .addEntry('admin', './assets/entrypoint/admin.js')\n\n    // Copy images\n    .copyFiles({\n        from: './assets/images',\n        to: 'images/[path][name].[hash:8].[ext]',\n        pattern: /\\.(png|jpg|jpeg|svg)$/\n    })",
+                        "position": "after_target",
+                        "target": "    .addEntry('app', './assets/app.js')",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "webpack.config.js",
+                        "content": "    .enableSassLoader()",
+                        "position": "after_target",
+                        "target": "    //.enableSassLoader()",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "assets/entrypoint/admin.js": {
+                    "contents": [
+                        "/* JS */",
+                        "import '../js/admin/index';",
+                        "",
+                        "/* CSS */",
+                        "import '../scss/admin/index.scss';"
+                    ],
+                    "executable": false
+                },
+                "assets/js/admin/index.js": {
+                    "contents": [
+                        "// Import theme admin base",
+                        "import '../../../vendor/vigicorp/theme-admin-bundle/assets/js/theme_admin';",
+                        "",
+                        "// Import datatable",
+                        "import 'datatables.net-bs5';",
+                        "import {dataList} from '../../../vendor/vigicorp/datatable-bundle/src/Resources/js/data-list';",
+                        "",
+                        "document.addEventListener('DOMContentLoaded', () => {",
+                        "    // Init datalist",
+                        "    dataList.init();",
+                        "});",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/images/.gitkeep": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/images/logo.svg": {
+                    "contents": [
+                        "\n<svg width=\"253.1375px\" height=\"76.15999908447264px\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"123.43125 36.92000045776368 253.1375 76.15999908447264\" style=\"background: rgba(0, 0, 0, 0);\" preserveAspectRatio=\"xMidYMid\"><defs><linearGradient id=\"editing-sticker-gradient\" x1=\"0.5\" y1=\"0.2\" x2=\"0.5\" y2=\"0.8\"><stop offset=\"0\" stop-color=\"#fd9\"></stop><stop offset=\"1\" stop-color=\"#9df\"></stop></linearGradient><filter id=\"editing-sticker\" x=\"-100%\" y=\"-100%\" width=\"300%\" height=\"300%\"><feMorphology operator=\"erode\" radius=\"1\" in=\"SourceAlpha\" result=\"alpha-erode\"></feMorphology><feConvolveMatrix order=\"3,3\" divisor=\"1\" kernelMatrix=\"0 1 0 1 1 1 0 1 0\" in=\"alpha-erode\" result=\"alpha-round\"></feConvolveMatrix><feMorphology operator=\"dilate\" radius=\"3.5\" in=\"alpha-round\" result=\"dilate-shadow\"></feMorphology><feGaussianBlur in=\"dilate-shadow\" stdDeviation=\"1.5\" result=\"shadow\"></feGaussianBlur><feFlood flood-color=\"#fff\" result=\"flood-sticker\"></feFlood><feComposite operator=\"in\" in=\"flood-sticker\" in2=\"alpha-round\" result=\"comp-sticker\"></feComposite><feMorphology operator=\"dilate\" radius=\"3\" in=\"comp-sticker\" result=\"morph-sticker\"></feMorphology><feConvolveMatrix order=\"3,3\" divisor=\"1\" kernelMatrix=\"0 1 0 1 1 1 0 1 0\" in=\"morph-sticker\" result=\"sticker\"></feConvolveMatrix><feMerge><feMergeNode in=\"shadow\"></feMergeNode><feMergeNode in=\"sticker\"></feMergeNode><feMergeNode in=\"SourceGraphic\"></feMergeNode></feMerge></filter></defs><g filter=\"url(#editing-sticker)\"><g transform=\"translate(162.9900255203247, 90.28500175476074)\"><path d=\"M26.52-23.80L28.59-23.80L28.59 0L26.18 0L26.18-19.04L16.83-3.03L15.64-3.03L6.29-18.94L6.29 0L3.88 0L3.88-23.80L5.95-23.80L16.29-6.15L26.52-23.80ZM43.15 0.17L43.15 0.17Q40.56 0.17 38.49-1.00L38.49-1.00L38.49-1.00Q36.41-2.18 35.22-4.25L35.22-4.25L35.22-4.25Q34.03-6.32 34.03-8.94L34.03-8.94L34.03-8.94Q34.03-11.56 35.22-13.63L35.22-13.63L35.22-13.63Q36.41-15.71 38.49-16.86L38.49-16.86L38.49-16.86Q40.56-18.02 43.15-18.02L43.15-18.02L43.15-18.02Q45.73-18.02 47.80-16.86L47.80-16.86L47.80-16.86Q49.88-15.71 51.05-13.63L51.05-13.63L51.05-13.63Q52.22-11.56 52.22-8.94L52.22-8.94L52.22-8.94Q52.22-6.32 51.05-4.25L51.05-4.25L51.05-4.25Q49.88-2.18 47.80-1.00L47.80-1.00L47.80-1.00Q45.73 0.17 43.15 0.17L43.15 0.17ZM43.15-1.97L43.15-1.97Q45.05-1.97 46.56-2.84L46.56-2.84L46.56-2.84Q48.08-3.71 48.93-5.30L48.93-5.30L48.93-5.30Q49.78-6.90 49.78-8.94L49.78-8.94L49.78-8.94Q49.78-10.98 48.93-12.58L48.93-12.58L48.93-12.58Q48.08-14.18 46.56-15.05L46.56-15.05L46.56-15.05Q45.05-15.91 43.15-15.91L43.15-15.91L43.15-15.91Q41.24-15.91 39.73-15.05L39.73-15.05L39.73-15.05Q38.22-14.18 37.35-12.58L37.35-12.58L37.35-12.58Q36.48-10.98 36.48-8.94L36.48-8.94L36.48-8.94Q36.48-6.90 37.35-5.30L37.35-5.30L37.35-5.30Q38.22-3.71 39.73-2.84L39.73-2.84L39.73-2.84Q41.24-1.97 43.15-1.97L43.15-1.97ZM66.27-18.02L66.27-18.02Q69.63-18.02 71.62-16.07L71.62-16.07L71.62-16.07Q73.61-14.11 73.61-10.37L73.61-10.37L73.61 0L71.20 0L71.20-10.13L71.20-10.13Q71.20-12.92 69.80-14.38L69.80-14.38L69.80-14.38Q68.41-15.84 65.82-15.84L65.82-15.84L65.82-15.84Q62.93-15.84 61.25-14.13L61.25-14.13L61.25-14.13Q59.57-12.41 59.57-9.38L59.57-9.38L59.57 0L57.15 0L57.15-17.88L59.47-17.88L59.47-14.59L59.47-14.59Q60.45-16.22 62.20-17.12L62.20-17.12L62.20-17.12Q63.95-18.02 66.27-18.02L66.27-18.02ZM89.59 0L89.59-23.80L92.11-23.80L92.11-2.18L105.43-2.18L105.43 0L89.59 0ZM116.42 0.17L116.42 0.17Q113.83 0.17 111.76-1.00L111.76-1.00L111.76-1.00Q109.68-2.18 108.49-4.25L108.49-4.25L108.49-4.25Q107.30-6.32 107.30-8.94L107.30-8.94L107.30-8.94Q107.30-11.56 108.49-13.63L108.49-13.63L108.49-13.63Q109.68-15.71 111.76-16.86L111.76-16.86L111.76-16.86Q113.83-18.02 116.42-18.02L116.42-18.02L116.42-18.02Q119-18.02 121.07-16.86L121.07-16.86L121.07-16.86Q123.15-15.71 124.32-13.63L124.32-13.63L124.32-13.63Q125.49-11.56 125.49-8.94L125.49-8.94L125.49-8.94Q125.49-6.32 124.32-4.25L124.32-4.25L124.32-4.25Q123.15-2.18 121.07-1.00L121.07-1.00L121.07-1.00Q119 0.17 116.42 0.17L116.42 0.17ZM116.42-1.97L116.42-1.97Q118.32-1.97 119.83-2.84L119.83-2.84L119.83-2.84Q121.35-3.71 122.20-5.30L122.20-5.30L122.20-5.30Q123.05-6.90 123.05-8.94L123.05-8.94L123.05-8.94Q123.05-10.98 122.20-12.58L122.20-12.58L122.20-12.58Q121.35-14.18 119.83-15.05L119.83-15.05L119.83-15.05Q118.32-15.91 116.42-15.91L116.42-15.91L116.42-15.91Q114.51-15.91 113.00-15.05L113.00-15.05L113.00-15.05Q111.49-14.18 110.62-12.58L110.62-12.58L110.62-12.58Q109.75-10.98 109.75-8.94L109.75-8.94L109.75-8.94Q109.75-6.90 110.62-5.30L110.62-5.30L110.62-5.30Q111.49-3.71 113.00-2.84L113.00-2.84L113.00-2.84Q114.51-1.97 116.42-1.97L116.42-1.97ZM144.67-17.88L146.98-17.88L146.98-2.18L146.98-2.18Q146.98 2.38 144.75 4.57L144.75 4.57L144.75 4.57Q142.53 6.77 138.04 6.77L138.04 6.77L138.04 6.77Q135.56 6.77 133.33 6.04L133.33 6.04L133.33 6.04Q131.10 5.30 129.71 4.01L129.71 4.01L130.93 2.18L130.93 2.18Q132.23 3.33 134.08 3.98L134.08 3.98L134.08 3.98Q135.93 4.62 137.97 4.62L137.97 4.62L137.97 4.62Q141.37 4.62 142.97 3.04L142.97 3.04L142.97 3.04Q144.57 1.46 144.57-1.87L144.57-1.87L144.57-4.15L144.57-4.15Q143.45-2.45 141.63-1.56L141.63-1.56L141.63-1.56Q139.81-0.68 137.60-0.68L137.60-0.68L137.60-0.68Q135.08-0.68 133.03-1.79L133.03-1.79L133.03-1.79Q130.97-2.89 129.79-4.88L129.79-4.88L129.79-4.88Q128.62-6.87 128.62-9.38L128.62-9.38L128.62-9.38Q128.62-11.90 129.79-13.87L129.79-13.87L129.79-13.87Q130.97-15.84 133.01-16.93L133.01-16.93L133.01-16.93Q135.05-18.02 137.60-18.02L137.60-18.02L137.60-18.02Q139.88-18.02 141.71-17.10L141.71-17.10L141.71-17.10Q143.55-16.18 144.67-14.45L144.67-14.45L144.67-17.88ZM137.84-2.82L137.84-2.82Q139.77-2.82 141.34-3.66L141.34-3.66L141.34-3.66Q142.90-4.49 143.77-5.98L143.77-5.98L143.77-5.98Q144.64-7.48 144.64-9.38L144.64-9.38L144.64-9.38Q144.64-11.29 143.77-12.77L143.77-12.77L143.77-12.77Q142.90-14.25 141.35-15.08L141.35-15.08L141.35-15.08Q139.81-15.91 137.84-15.91L137.84-15.91L137.84-15.91Q135.90-15.91 134.35-15.10L134.35-15.10L134.35-15.10Q132.80-14.28 131.94-12.78L131.94-12.78L131.94-12.78Q131.07-11.29 131.07-9.38L131.07-9.38L131.07-9.38Q131.07-7.48 131.94-5.98L131.94-5.98L131.94-5.98Q132.80-4.49 134.35-3.66L134.35-3.66L134.35-3.66Q135.90-2.82 137.84-2.82L137.84-2.82ZM161.06 0.17L161.06 0.17Q158.47 0.17 156.40-1.00L156.40-1.00L156.40-1.00Q154.33-2.18 153.14-4.25L153.14-4.25L153.14-4.25Q151.95-6.32 151.95-8.94L151.95-8.94L151.95-8.94Q151.95-11.56 153.14-13.63L153.14-13.63L153.14-13.63Q154.33-15.71 156.40-16.86L156.40-16.86L156.40-16.86Q158.47-18.02 161.06-18.02L161.06-18.02L161.06-18.02Q163.64-18.02 165.72-16.86L165.72-16.86L165.72-16.86Q167.79-15.71 168.96-13.63L168.96-13.63L168.96-13.63Q170.14-11.56 170.14-8.94L170.14-8.94L170.14-8.94Q170.14-6.32 168.96-4.25L168.96-4.25L168.96-4.25Q167.79-2.18 165.72-1.00L165.72-1.00L165.72-1.00Q163.64 0.17 161.06 0.17L161.06 0.17ZM161.06-1.97L161.06-1.97Q162.96-1.97 164.47-2.84L164.47-2.84L164.47-2.84Q165.99-3.71 166.84-5.30L166.84-5.30L166.84-5.30Q167.69-6.90 167.69-8.94L167.69-8.94L167.69-8.94Q167.69-10.98 166.84-12.58L166.84-12.58L166.84-12.58Q165.99-14.18 164.47-15.05L164.47-15.05L164.47-15.05Q162.96-15.91 161.06-15.91L161.06-15.91L161.06-15.91Q159.15-15.91 157.64-15.05L157.64-15.05L157.64-15.05Q156.13-14.18 155.26-12.58L155.26-12.58L155.26-12.58Q154.39-10.98 154.39-8.94L154.39-8.94L154.39-8.94Q154.39-6.90 155.26-5.30L155.26-5.30L155.26-5.30Q156.13-3.71 157.64-2.84L157.64-2.84L157.64-2.84Q159.15-1.97 161.06-1.97L161.06-1.97Z\" fill=\"url(#editing-sticker-gradient)\" stroke=\"#000\" stroke-width=\"2.5\"></path></g></g><style>text {\n  font-size: 64px;\n  font-family: Arial Black;\n  dominant-baseline: central;\n  text-anchor: middle;\n}</style></svg>"
+                    ],
+                    "executable": false
+                },
+                "assets/scss/admin/_variables.scss": {
+                    "contents": [
+                        "// Change bootstrap variables (colors, etc...)",
+                        "$primary :#XXXXXX;",
+                        "$primary-button-text-color: white;",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/scss/admin/index.scss": {
+                    "contents": [
+                        "// Datatable",
+                        "@import \"~datatables.net-bs5\";",
+                        "",
+                        "// BOOTSTRAP V.: 5.3",
+                        "@import \"~bootstrap/scss/functions\";",
+                        "",
+                        "// Customisable colors (use this to define customer theme main colors)",
+                        "@import \"variables\";",
+                        "",
+                        "// Admin theme",
+                        "@import \"../../../vendor/vigicorp/theme-admin-bundle/assets/scss/theme_admin\";",
+                        "",
+                        "// Custom code",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/theme_admin.yaml": {
+                    "contents": [
+                        "theme_admin:",
+                        "    project_name: MON PROJET",
+                        "    default_route: admin_default",
+                        "# Uncomment and set recovery password route to show link on login page",
+                        "#    recovery_password_route:",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "templates/bundles/VigicorpThemeAdminBundle/email": {
+                    "contents": [
+                        "{% extends '@!VigicorpThemeAdmin/email/base.mjml.twig' %}",
+                        "",
+                        "{% set email_color_text = \"dark\" %}",
+                        "{% set email_color_bg = \"lightgrey\" %}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "851bc3d4249adc2c0048b46ba3bde2060f1049ac"
+        }
+    }
+}
