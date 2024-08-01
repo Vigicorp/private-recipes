@@ -122,7 +122,7 @@
                     ],
                     "executable": false
                 },
-                "templates/bundles/VigicorpThemeAdminBundle/email": {
+                "templates/bundles/VigicorpThemeAdminBundle/email/base.mjml.twig": {
                     "contents": [
                         "{% extends '@!VigicorpThemeAdmin/email/base.mjml.twig' %}",
                         "",
@@ -133,7 +133,7 @@
                     "executable": false
                 }
             },
-            "ref": "851bc3d4249adc2c0048b46ba3bde2060f1049ac"
+            "ref": "983b26cf9eeefefd7f962516b53b47cf66e69724"
         }
     }
 }
