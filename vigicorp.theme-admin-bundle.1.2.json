@@ -29,7 +29,7 @@
                     },
                     {
                         "file": "webpack.config.js",
-                        "content": "    .addEntry('admin', './assets/entrypoint/admin.js')\n\n    // Copy images\n    .copyFiles({\n        from: './assets/images',\n        to: 'images/[path][name].[hash:8].[ext]',\n        pattern: /\\.(png|jpg|jpeg|svg)$/\n    })",
+                        "content": "    .addEntry('admin', './assets/entrypoint/admin.js')\n\n    // Copy images\n    .copyFiles({\n        from: './assets/images',\n        to: 'images/[path][name].[fullhash:8].[ext]',\n        pattern: /\\.(png|jpg|jpeg|svg)$/\n    })",
                         "position": "after_target",
                         "target": "    .addEntry('app', './assets/app.js')",
                         "warn_if_missing": true
@@ -133,7 +133,7 @@
                     "executable": false
                 }
             },
-            "ref": "983b26cf9eeefefd7f962516b53b47cf66e69724"
+            "ref": "4f8598196bd018a6a55f6116b70c5e6acca9c12a"
         }
     }
 }
