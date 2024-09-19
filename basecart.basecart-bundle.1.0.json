@@ -19,6 +19,13 @@
                 "add-lines": [
                     {
                         "file": "package.json",
+                        "content": "        \"sortablejs\": \"^1.15.3\",",
+                        "position": "after_target",
+                        "target": "    \"dependencies\": {",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "package.json",
                         "content": "        \"treeselectjs\": \"^0.10.0\",",
                         "position": "after_target",
                         "target": "    \"dependencies\": {",
@@ -124,7 +131,7 @@
                     "executable": false
                 }
             },
-            "ref": "27369acefcb65a4f8b58f5f74eff926b83af2f87"
+            "ref": "785d24dfb65f4c01fd7e33b1c6b86df1b6bbdd7e"
         }
     }
 }
