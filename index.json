@@ -19,6 +19,9 @@
         "vigicorp/theme-admin-bundle": [
             "1.0",
             "1.2"
+        ],
+        "vigicorp/yousign-bundle": [
+            "1.0"
         ]
     },
     "branch": "main",

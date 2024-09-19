@@ -1,0 +1,34 @@
+{
+    "manifests": {
+        "vigicorp/yousign-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\YousignBundle\\VigicorpYousignBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "YOUSIGN_ENVIRONMENT": "sandbox",
+                    "YOUSIGN_API_KEY": "",
+                    "YOUSIGN_WEBHOOK_SECRET_KEY": ""
+                }
+            },
+            "files": {
+                "config/packages/vigicorp_yousign.yaml": {
+                    "contents": [
+                        "vigicorp_yousign:",
+                        "    yousign_environment: '%env(YOUSIGN_ENVIRONMENT)%'",
+                        "    yousign_api_key: '%env(YOUSIGN_API_KEY)%'",
+                        "    yousign_webhook_secret_key: '%env(YOUSIGN_WEBHOOK_SECRET_KEY)%'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "4a3d239501dd14a2e185640af33e2741e4b99b96"
+        }
+    }
+}
