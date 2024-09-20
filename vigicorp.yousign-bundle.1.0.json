@@ -26,9 +26,18 @@
                         ""
                     ],
                     "executable": false
+                },
+                "config/routes/vigicorp_yousign.yaml": {
+                    "contents": [
+                        "vigicorp_yousign:",
+                        "    resource: '@VigicorpYousignBundle/src/Controller/'",
+                        "    type: attribute",
+                        ""
+                    ],
+                    "executable": false
                 }
             },
-            "ref": "4a3d239501dd14a2e185640af33e2741e4b99b96"
+            "ref": "d6bd108dab3ac0cf34029330d00e1837a6d9d9a8"
         }
     }
 }
