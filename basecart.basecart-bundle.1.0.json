@@ -51,13 +51,6 @@
                         "position": "after_target",
                         "target": "access_control:",
                         "warn_if_missing": true
-                    },
-                    {
-                        "file": "config/packages/twig.yaml",
-                        "content": "    paths:\n        vendor/basecart/basecart-bundle/templates/bundles/VigicorpThemeAdminBundle: VigicorpThemeAdmin",
-                        "position": "after_target",
-                        "target": "twig:",
-                        "warn_if_missing": true
                     }
                 ]
             },
@@ -131,7 +124,7 @@
                     "executable": false
                 }
             },
-            "ref": "785d24dfb65f4c01fd7e33b1c6b86df1b6bbdd7e"
+            "ref": "e951b1838ecb8b4face820bf679551a62d0e95bf"
         }
     }
 }
