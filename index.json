@@ -22,6 +22,9 @@
         ],
         "vigicorp/yousign-bundle": [
             "1.0"
+        ],
+        "vigicorp/docusign-bundle": [
+            "1.0"
         ]
     },
     "branch": "main",

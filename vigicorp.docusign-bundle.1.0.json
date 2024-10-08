@@ -1,0 +1,51 @@
+{
+    "manifests": {
+        "vigicorp/docusign-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\DocusignBundle\\VigicorpDocusignBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "DOCUSIGN_ENVIRONMENT": "sandbox",
+                    "DOCUSIGN_ACCOUNT_ID": "",
+                    "DOCUSIGN_OAUTH_PUBLIC_KEY": "%kernel.project_dir%/config/docusign/public.key",
+                    "DOCUSIGN_OAUTH_PRIVATE_KEY": "%kernel.project_dir%/config/docusign/private.key",
+                    "DOCUSIGN_OAUTH_IMPERSONATED_USER_ID": "",
+                    "DOCUSIGN_INTEGRATION_KEY": "",
+                    "DOCUSIGN_WEBHOOK_KEY": ""
+                }
+            },
+            "files": {
+                "config/packages/vigicorp_docusign.yaml": {
+                    "contents": [
+                        "vigicorp_docusign:",
+                        "    environment: '%env(DOCUSIGN_ENVIRONMENT)%'",
+                        "    account_id: '%env(DOCUSIGN_ACCOUNT_ID)%'",
+                        "    oauth_public_key: '%env(resolve:DOCUSIGN_OAUTH_PUBLIC_KEY)%'",
+                        "    oauth_private_key: '%env(resolve:DOCUSIGN_OAUTH_PRIVATE_KEY)%'",
+                        "    oauth_impersonated_user_id: '%env(DOCUSIGN_OAUTH_IMPERSONATED_USER_ID)%'",
+                        "    integration_key: '%env(DOCUSIGN_INTEGRATION_KEY)%'",
+                        "    webhook_key: '%env(DOCUSIGN_WEBHOOK_KEY)%',"
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/vigicorp_docusign.yaml": {
+                    "contents": [
+                        "vigicorp_docusign:",
+                        "    resource: '@VigicorpDocusignBundle/src/Controller/'",
+                        "    type: attribute",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "cfa663d4157175cd14c375f081fa2a11fe347c2b"
+        }
+    }
+}
