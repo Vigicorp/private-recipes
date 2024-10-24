@@ -1,7 +1,8 @@
 {
     "recipes": {
         "basecart/basecart-bundle": [
-            "1.0"
+            "1.0",
+            "1.4"
         ],
         "basecart/payment-stripe-bundle": [
             "1.0"
@@ -24,6 +25,9 @@
             "1.0"
         ],
         "vigicorp/docusign-bundle": [
+            "1.0"
+        ],
+        "vigicorp/entity-override-bundle": [
             "1.0"
         ]
     },
