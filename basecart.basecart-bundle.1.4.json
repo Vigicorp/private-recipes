@@ -1,0 +1,129 @@
+{
+    "manifests": {
+        "basecart/basecart-bundle": {
+            "manifest": {
+                "bundles": {
+                    "BaseCart\\BaseCartBundle\\BaseCartBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "assets/": "assets/",
+                    "config/": "%CONFIG_DIR%/",
+                    "src/": "%SRC_DIR%/"
+                },
+                "gitignore": [
+                    "/public/sitemap.xml",
+                    "/public/sitemap.*.xml"
+                ],
+                "add-lines": [
+                    {
+                        "file": "package.json",
+                        "content": "        \"sortablejs\": \"^1.15.3\",",
+                        "position": "after_target",
+                        "target": "    \"dependencies\": {",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "package.json",
+                        "content": "        \"treeselectjs\": \"^0.10.0\",",
+                        "position": "after_target",
+                        "target": "    \"dependencies\": {",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "assets/js/admin/index.js",
+                        "content": "\n// Import basecart\nimport '../../../vendor/basecart/basecart-bundle/assets/js/admin';",
+                        "position": "after_target",
+                        "target": "src/Resources/js/data-list",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "config/packages/security.yaml",
+                        "content": "        basecart_admin:\n            pattern: ^(/admin|/vigicorp-datatable-bundle/basecart_)\n            lazy: true\n            provider: basecart_admin_provider\n            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }\n            form_login:\n                login_path: basecart_admin_login\n                check_path: basecart_admin_login\n                default_target_path: basecart_admin_default\n            logout:\n                path: basecart_admin_logout\n                target: basecart_admin_login\n                invalidate_session: false\n        basecart_shop_user:\n            lazy: true\n            provider: basecart_shop_user_provider\n            form_login:\n                login_path: basecart_login\n                check_path: basecart_login\n            logout:\n                path: basecart_logout\n                target: basecart_login\n                invalidate_session: false",
+                        "position": "after_target",
+                        "target": "security: false",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "config/packages/security.yaml",
+                        "content": "         - { path: ^/admin/connexion, roles: PUBLIC_ACCESS }\n         - { path: ^/admin/deconnexion, roles: PUBLIC_ACCESS }\n         - { path: ^/admin/mot-de-passe-oublie, roles: PUBLIC_ACCESS }",
+                        "position": "after_target",
+                        "target": "access_control:",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "assets/entrypoint/app.js": {
+                    "contents": [
+                        "/* JS */",
+                        "import '../js/app/index';",
+                        "",
+                        "/* CSS */",
+                        "import '../scss/app/index.scss';"
+                    ],
+                    "executable": false
+                },
+                "assets/js/app/index.js": {
+                    "contents": [
+                        "// Import basecart",
+                        "import '../../../vendor/basecart/basecart-bundle/assets/js/front';",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/scss/app/index.scss": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/basecart.yaml": {
+                    "contents": [
+                        "basecart_admin_controllers:",
+                        "    resource: '@BaseCartBundle/src/Admin/Controller/'",
+                        "    type: attribute",
+                        "    prefix: /admin",
+                        "    name_prefix: basecart_admin_",
+                        "basecart_front_controllers:",
+                        "    resource: '@BaseCartBundle/src/Controller/'",
+                        "    type: attribute",
+                        "    name_prefix: basecart_",
+                        "# Use to add another controller on admin or override basecart existing controllers",
+                        "admin_controllers:",
+                        "    resource: ../../src/Admin/Controller/",
+                        "    type: attribute",
+                        "    prefix: /admin",
+                        "    name_prefix: basecart_admin_",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/basecart.yaml": {
+                    "contents": [
+                        "basecart:",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/theme_admin.yaml": {
+                    "contents": [
+                        "theme_admin:",
+                        "    project_name: BaseCart",
+                        "    default_route: basecart_admin_default",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Admin/Controller/.gitkeep": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "32af46195a3594f64ea4fdf9d6e1444a31f15fef"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "manifests": {
+        "vigicorp/entity-override-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\EntityOverrideBundle\\EntityOverrideBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/entity_override.yaml": {
+                    "contents": [
+                        "entity_override:",
+                        "    overridden_entities:",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "c10fcad3fef168bf0c4b24405d485d24711143ac"
+        }
+    }
+}
