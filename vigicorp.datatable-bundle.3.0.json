@@ -1,0 +1,38 @@
+{
+    "manifests": {
+        "vigicorp/datatable-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\DatatableBundle\\VigicorpDatatableBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/vigicorp_datatable.yaml": {
+                    "contents": [
+                        "vigicorp_datatable:",
+                        "    yadcf:",
+                        "        active: true",
+                        "#    datatables:",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/vigicorp_datatable.yaml": {
+                    "contents": [
+                        "vigicorp_datatable:",
+                        "      resource: '@VigicorpDatatableBundle/src/Controller/'",
+                        "      type: attribute",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "b64582fb3e3774165445b944b7f74f7cc8154086"
+        }
+    }
+}
