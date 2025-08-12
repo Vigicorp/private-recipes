@@ -1,0 +1,23 @@
+{
+    "manifests": {
+        "vigicorp/security-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\SecurityBundle\\VigicorpSecurityBundle": [
+                        "all"
+                    ]
+                },
+                "add-lines": [
+                    {
+                        "file": "config/packages/security.yaml",
+                        "content": "            login_throttling:\n                max_attempts: 3\n                interval: '5 minutes'",
+                        "position": "after_target",
+                        "target": "        main:",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "ref": "3c776c93a44fbd1b4d0293bbb9577b818fddf367"
+        }
+    }
+}
