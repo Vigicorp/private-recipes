@@ -1,0 +1,28 @@
+{
+    "manifests": {
+        "vigicorp/kube-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\KubeBundle\\VigicorpKubeBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/routes/vigicorp_kube.yaml": {
+                    "contents": [
+                        "vigicorp_kube:",
+                        "      resource: '@VigicorpKubeBundle/src/Controller/'",
+                        "      type: attribute",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "c1ab599e2d765ac850c0fe701cc86eb1751f1c6b"
+        }
+    }
+}
