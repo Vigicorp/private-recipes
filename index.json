@@ -9,25 +9,32 @@
         ],
         "vigicorp/datatable-bundle": [
             "1.0",
-            "2.0"
-        ],
-        "vigicorp/import-bundle": [
-            "1.0"
-        ],
-        "vigicorp/tools-bundle": [
-            "1.1"
-        ],
-        "vigicorp/theme-admin-bundle": [
-            "1.0",
-            "1.2"
-        ],
-        "vigicorp/yousign-bundle": [
-            "1.0"
+            "2.0",
+            "3.0"
         ],
         "vigicorp/docusign-bundle": [
             "1.0"
         ],
         "vigicorp/entity-override-bundle": [
+            "1.0"
+        ],
+        "vigicorp/import-bundle": [
+            "1.0"
+        ],
+        "vigicorp/kube-bundle": [
+            "1.1"
+        ],
+        "vigicorp/security-bundle": [
+            "1.0.1"
+        ],
+        "vigicorp/theme-admin-bundle": [
+            "1.0",
+            "1.2"
+        ],
+        "vigicorp/tools-bundle": [
+            "1.1"
+        ],
+        "vigicorp/yousign-bundle": [
             "1.0"
         ]
     },
