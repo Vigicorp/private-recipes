@@ -9,7 +9,23 @@
                 },
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/"
-                }
+                },
+                "add-lines": [
+                    {
+                        "file": "config/packages/security.yaml",
+                        "content": "        health:\n            pattern: ^/health\n            stateless: true",
+                        "position": "after_target",
+                        "target": "    firewalls:",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "config/packages/security.yaml",
+                        "content": "         - { path: ^/health, roles: PUBLIC_ACCESS }",
+                        "position": "after_target",
+                        "target": "    access_control:",
+                        "warn_if_missing": true
+                    }
+                ]
             },
             "files": {
                 "config/routes/vigicorp_kube.yaml": {
