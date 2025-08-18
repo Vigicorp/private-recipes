@@ -14,34 +14,6 @@
                 },
                 "add-lines": [
                     {
-                        "file": "package.json",
-                        "content": "        \"file-loader\": \"^6.0.0\",\n        \"sass\": \"^1.77.6\",\n        \"sass-loader\": \"^14.0.0\",",
-                        "position": "after_target",
-                        "target": "    \"devDependencies\": {",
-                        "warn_if_missing": true
-                    },
-                    {
-                        "file": "package.json",
-                        "content": "    \"dependencies\": {\n        \"@mdi/font\": \"^7.4.47\",\n        \"bootstrap\": \"^5.3.3\",\n        \"datatables.net-bs5\": \"^1.13.0\",\n        \"jquery\": \"^3.7.1\",\n        \"mjml\": \"^4.15.3\",\n        \"tom-select\": \"^2.3.1\"\n    },",
-                        "position": "after_target",
-                        "target": "    \"private\": true,",
-                        "warn_if_missing": true
-                    },
-                    {
-                        "file": "webpack.config.js",
-                        "content": "    .addEntry('admin', './assets/entrypoint/admin.js')\n\n    // Copy images\n    .copyFiles({\n        from: './assets/images',\n        to: 'images/[path][name].[fullhash:8].[ext]',\n        pattern: /\\.(png|jpg|jpeg|svg)$/\n    })",
-                        "position": "after_target",
-                        "target": "    .addEntry('app', './assets/app.js')",
-                        "warn_if_missing": true
-                    },
-                    {
-                        "file": "webpack.config.js",
-                        "content": "    .enableSassLoader()",
-                        "position": "after_target",
-                        "target": "    //.enableSassLoader()",
-                        "warn_if_missing": true
-                    },
-                    {
                         "file": "config/packages/security.yaml",
                         "content": "        # Change name if install on subfolder \n        main:\n            # Uncomment if install on subfolder\n            # pattern: ^(/admin|/vigicorp-datatable-bundle/vigicorp_theme_admin_)\n            lazy: true\n            provider: admin_provider\n            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }\n            form_login:\n                login_path: vigicorp_theme_admin_login\n                check_path: vigicorp_theme_admin_login\n                default_target_path: vigicorp_theme_admin_default\n            logout:\n                path: vigicorp_theme_admin_logout\n                target: vigicorp_theme_admin_login\n                invalidate_session: false",
                         "position": "after_target",
@@ -156,7 +128,7 @@
                     "executable": false
                 }
             },
-            "ref": "1227f0ee92ea04ffc5b1cbae3886e738eff0edca"
+            "ref": "19296599eae9560157cd609c25180ff6af443998"
         }
     }
 }
