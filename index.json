@@ -29,7 +29,8 @@
         ],
         "vigicorp/theme-admin-bundle": [
             "1.0",
-            "1.2"
+            "1.2",
+            "2.0"
         ],
         "vigicorp/tools-bundle": [
             "1.1"
