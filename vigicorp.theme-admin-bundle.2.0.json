@@ -12,6 +12,9 @@
                     "config/": "%CONFIG_DIR%/",
                     "templates/": "templates/"
                 },
+                "composer-scripts": {
+                    "sass:build": "symfony-cmd"
+                },
                 "add-lines": [
                     {
                         "file": "config/packages/security.yaml",
@@ -72,7 +75,7 @@
                 "assets/scss/admin/_variables.scss": {
                     "contents": [
                         "// Change bootstrap variables (colors, etc...)",
-                        "$primary :#XXXXXX;",
+                        "$primary: #XXXXXX;",
                         "$primary-button-text-color: white;",
                         ""
                     ],
@@ -108,7 +111,7 @@
                 "config/routes/vigicorp_theme_admin.yaml": {
                     "contents": [
                         "vigicorp_theme_admin_controllers:",
-                        "    resource: '@VigicorpThemeBundle/src/Controller/'",
+                        "    resource: '@VigicorpThemeAdminBundle/src/Controller/'",
                         "    type: attribute",
                         "    name_prefix: vigicorp_theme_admin_",
                         "    # Uncomment if on subfolder",
@@ -128,7 +131,7 @@
                     "executable": false
                 }
             },
-            "ref": "19296599eae9560157cd609c25180ff6af443998"
+            "ref": "355e241246a62fe811ee17687fbb1e75d7abe5b1"
         }
     }
 }
