@@ -83,6 +83,17 @@
                     ],
                     "executable": false
                 },
+                "config/routes/vigicorp_theme_admin.yaml": {
+                    "contents": [
+                        "vigicorp_theme_admin_controllers:",
+                        "    resource: '@VigicorpThemeAdminBundle/src/Controller/'",
+                        "    type: attribute",
+                        "    name_prefix: vigicorp_theme_admin_",
+                        "    prefix: /admin",
+                        ""
+                    ],
+                    "executable": false
+                },
                 "config/packages/basecart.yaml": {
                     "contents": [
                         "basecart:",
@@ -106,7 +117,7 @@
                     "executable": false
                 }
             },
-            "ref": "6a9423e94826f741a29392e30d07edc32e0672bf"
+            "ref": "552d07b5c3ccf1ded62e0eaa94ebe30be7126d97"
         }
     }
 }
