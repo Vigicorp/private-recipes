@@ -21,7 +21,7 @@
                         "file": "assets/js/admin.js",
                         "content": "\n// Import basecart\nimport '../../vendor/basecart/basecart-bundle/assets/js/admin.js';",
                         "position": "after_target",
-                        "target": "src/Resources/js/data-list",
+                        "target": "datatable-bundle/assets/js/data-list.js",
                         "warn_if_missing": true
                     },
                     {
@@ -99,7 +99,7 @@
                     "executable": false
                 }
             },
-            "ref": "32af46195a3594f64ea4fdf9d6e1444a31f15fef"
+            "ref": "9d77ffd9c1c50d90d80edec41bddeacc8a321c78"
         }
     }
 }
