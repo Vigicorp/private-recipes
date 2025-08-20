@@ -81,7 +81,7 @@
                 "assets/scss/include/_variables.scss": {
                     "contents": [
                         "// Change bootstrap variables (colors, etc...)",
-                        "$primary: #XXXXXX;",
+                        "$primary: red;",
                         "$primary-button-text-color: white;",
                         ""
                     ],
@@ -140,7 +140,7 @@
                     "executable": false
                 }
             },
-            "ref": "99912298e53bff09311df9c04affd10d30757833"
+            "ref": "6e4fe48eb992f34325f7426f70af37afa1c3f69d"
         }
     }
 }
