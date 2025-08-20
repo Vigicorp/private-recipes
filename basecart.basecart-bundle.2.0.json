@@ -18,6 +18,13 @@
                 ],
                 "add-lines": [
                     {
+                        "file": "importmap.php",
+                        "content": "    'app' => [\n        'path' => './assets/js/app.js',\n        'entrypoint' => true,\n    ],",
+                        "position": "after_target",
+                        "target": "return [",
+                        "warn_if_missing": true
+                    },
+                    {
                         "file": "assets/js/admin.js",
                         "content": "\n// Import basecart\nimport '../../vendor/basecart/basecart-bundle/assets/js/admin.js';",
                         "position": "after_target",
@@ -99,7 +106,7 @@
                     "executable": false
                 }
             },
-            "ref": "9d77ffd9c1c50d90d80edec41bddeacc8a321c78"
+            "ref": "6a9423e94826f741a29392e30d07edc32e0672bf"
         }
     }
 }
