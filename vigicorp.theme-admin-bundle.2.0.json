@@ -17,8 +17,15 @@
                 },
                 "add-lines": [
                     {
+                        "file": "importmap.php",
+                        "content": "    'admin' => [\n        'path' => './assets/js/admin.js',\n        'entrypoint' => true,\n    ],",
+                        "position": "after_target",
+                        "target": "return [",
+                        "warn_if_missing": true
+                    },
+                    {
                         "file": "config/packages/security.yaml",
-                        "content": "        # Change name if install on subfolder \n        main:\n            # Uncomment if install on subfolder\n            # pattern: ^(/admin|/vigicorp-datatable-bundle/vigicorp_theme_admin_)\n            lazy: true\n            provider: admin_provider\n            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }\n            form_login:\n                login_path: vigicorp_theme_admin_login\n                check_path: vigicorp_theme_admin_login\n                default_target_path: vigicorp_theme_admin_default\n            logout:\n                path: vigicorp_theme_admin_logout\n                target: vigicorp_theme_admin_login\n                invalidate_session: false",
+                        "content": "        # Change name if install on subfolder \n        vigicorp_theme_admin:\n            # Uncomment if install on subfolder\n            # pattern: ^(/admin|/vigicorp-datatable-bundle/vigicorp_theme_admin_)\n            lazy: true\n            provider: admin_provider\n            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }\n            form_login:\n                login_path: vigicorp_theme_admin_login\n                check_path: vigicorp_theme_admin_login\n                default_target_path: vigicorp_theme_admin_default\n            logout:\n                path: vigicorp_theme_admin_logout\n                target: vigicorp_theme_admin_login\n                invalidate_session: false",
                         "position": "after_target",
                         "target": "security: false",
                         "warn_if_missing": true
@@ -33,6 +40,15 @@
                 ]
             },
             "files": {
+                "package.json": {
+                    "contents": [
+                        "{",
+                        "  \"dependencies\": {",
+                        "    \"mjml\": \"^4.15.3\"",
+                        "  }",
+                        "}"
+                    ]
+                },
                 "assets/js/admin.js": {
                     "contents": [
                         "// Import theme admin base",
