@@ -33,24 +33,14 @@
                 ]
             },
             "files": {
-                "assets/entrypoint/admin.js": {
-                    "contents": [
-                        "/* JS */",
-                        "import '../js/admin/index';",
-                        "",
-                        "/* CSS */",
-                        "import '../scss/admin/index.scss';"
-                    ],
-                    "executable": false
-                },
-                "assets/js/admin/index.js": {
+                "assets/js/admin.js": {
                     "contents": [
                         "// Import theme admin base",
-                        "import '../../../vendor/vigicorp/theme-admin-bundle/assets/js/theme_admin';",
+                        "import '../../vendor/vigicorp/theme-admin-bundle/assets/js/theme_admin.js';",
                         "",
                         "// Import datatable",
                         "import 'datatables.net-bs5';",
-                        "import {dataList} from '../../../vendor/vigicorp/datatable-bundle/src/Resources/js/data-list';",
+                        "import {dataList} from '../../vendor/vigicorp/datatable-bundle/assets/js/data-list.js';",
                         "",
                         "document.addEventListener('DOMContentLoaded', () => {",
                         "    // Init datalist",
@@ -72,7 +62,7 @@
                     ],
                     "executable": false
                 },
-                "assets/scss/admin/_variables.scss": {
+                "assets/scss/include/_variables.scss": {
                     "contents": [
                         "// Change bootstrap variables (colors, etc...)",
                         "$primary: #XXXXXX;",
@@ -81,19 +71,22 @@
                     ],
                     "executable": false
                 },
-                "assets/scss/admin/index.scss": {
+                "assets/scss/admin.scss": {
                     "contents": [
                         "// Datatable",
-                        "@import \"~datatables.net-bs5\";",
+                        "@import \"../vendor/datatables.net-bs5/css/dataTables.bootstrap5.min\";",
+                        "",
+                        "// Tom Select",
+                        "@import \"../vendor/tom-select/dist/css/tom-select.bootstrap5.min\";",
                         "",
                         "// BOOTSTRAP V.: 5.3",
-                        "@import \"~bootstrap/scss/functions\";",
+                        "@import \"../../vendor/twbs/bootstrap/scss/functions\";",
                         "",
                         "// Customisable colors (use this to define customer theme main colors)",
-                        "@import \"variables\";",
+                        "@import \"include/variables\";",
                         "",
                         "// Admin theme",
-                        "@import \"../../../vendor/vigicorp/theme-admin-bundle/assets/scss/theme_admin\";",
+                        "@import \"../../vendor/vigicorp/theme-admin-bundle/assets/scss/theme_admin\";",
                         "",
                         "// Custom code",
                         ""
@@ -131,7 +124,7 @@
                     "executable": false
                 }
             },
-            "ref": "355e241246a62fe811ee17687fbb1e75d7abe5b1"
+            "ref": "92ba0442d59d572115e411a75eaa7d38146e9406"
         }
     }
 }
