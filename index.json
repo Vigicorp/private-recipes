@@ -2,7 +2,8 @@
     "recipes": {
         "basecart/basecart-bundle": [
             "1.0",
-            "1.4"
+            "1.4",
+            "2.0"
         ],
         "basecart/payment-stripe-bundle": [
             "1.0"
