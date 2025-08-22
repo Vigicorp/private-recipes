@@ -32,7 +32,7 @@
                     },
                     {
                         "file": "config/packages/security.yaml",
-                        "content": "         - { path: ^/connexion, roles: PUBLIC_ACCESS }\n         - { path: ^/deconnexion, roles: PUBLIC_ACCESS }\n         - { path: ^/mot-de-passe-oublie, roles: PUBLIC_ACCESS }\n         # Replace with this if would install on subfolder admin\n         #- { path: ^/admin/connexion, roles: PUBLIC_ACCESS }\n         #- { path: ^/admin/deconnexion, roles: PUBLIC_ACCESS }\n         #- { path: ^/admin/mot-de-passe-oublie, roles: PUBLIC_ACCESS }",
+                        "content": "        - { path: ^/connexion, roles: PUBLIC_ACCESS }\n        - { path: ^/deconnexion, roles: PUBLIC_ACCESS }\n        - { path: ^/mot-de-passe-oublie, roles: PUBLIC_ACCESS }\n        # Replace with this if would install on subfolder admin\n        #- { path: ^/admin/connexion, roles: PUBLIC_ACCESS }\n        #- { path: ^/admin/deconnexion, roles: PUBLIC_ACCESS }\n        #- { path: ^/admin/mot-de-passe-oublie, roles: PUBLIC_ACCESS }",
                         "position": "after_target",
                         "target": "access_control:",
                         "warn_if_missing": true
@@ -140,7 +140,7 @@
                     "executable": false
                 }
             },
-            "ref": "6e4fe48eb992f34325f7426f70af37afa1c3f69d"
+            "ref": "6e4fe48eb992f34325f7426f70af37afa1c3f69e"
         }
     }
 }

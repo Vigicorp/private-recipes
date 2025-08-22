@@ -40,7 +40,7 @@
                     },
                     {
                         "file": "config/packages/security.yaml",
-                        "content": "         - { path: ^/admin/connexion, roles: PUBLIC_ACCESS }\n         - { path: ^/admin/deconnexion, roles: PUBLIC_ACCESS }\n         - { path: ^/admin/mot-de-passe-oublie, roles: PUBLIC_ACCESS }",
+                        "content": "        - { path: ^/admin/connexion, roles: PUBLIC_ACCESS }\n        - { path: ^/admin/deconnexion, roles: PUBLIC_ACCESS }\n        - { path: ^/admin/mot-de-passe-oublie, roles: PUBLIC_ACCESS }",
                         "position": "after_target",
                         "target": "access_control:",
                         "warn_if_missing": true
@@ -117,7 +117,7 @@
                     "executable": false
                 }
             },
-            "ref": "8226f6fc5f3b8c4caf076277728d2e1dbf85f72d"
+            "ref": "8226f6fc5f3b8c4caf076277728d2f1dbf85f72d"
         }
     }
 }
