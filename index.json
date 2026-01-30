@@ -25,6 +25,9 @@
         "vigicorp/kube-bundle": [
             "1.1"
         ],
+        "vigicorp/search-bundle": [
+            "1.0"
+        ],
         "vigicorp/security-bundle": [
             "1.0"
         ],
