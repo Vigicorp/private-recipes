@@ -13,7 +13,7 @@
                 "add-lines": [
                     {
                         "file": "config/packages/asset_mapper.yaml",
-                        "content": "            vendor/vigicorp/datatable-bundle/assets",
+                        "content": "            - vendor/vigicorp/datatable-bundle/assets",
                         "position": "after_target",
                         "target": "- assets/",
                         "warn_if_missing": true
