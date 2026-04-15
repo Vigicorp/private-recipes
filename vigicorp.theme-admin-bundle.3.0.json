@@ -10,7 +10,8 @@
                 "copy-from-recipe": {
                     "assets/": "assets/",
                     "config/": "%CONFIG_DIR%/",
-                    "templates/": "templates/"
+                    "templates/": "templates/",
+                    "src/": "src/"
                 },
                 "composer-scripts": {
                     "sass:build": "symfony-cmd"
