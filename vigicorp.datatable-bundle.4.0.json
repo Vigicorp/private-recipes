@@ -9,26 +9,25 @@
                 },
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/"
-                }
+                },
+                "add-lines": [
+                    {
+                        "file": "config/packages/asset_mapper.yaml",
+                        "content": "            vendor/vigicorp/datatable-bundle/assets",
+                        "position": "after_target",
+                        "target": "- assets/",
+                        "warn_if_missing": true
+                    }
+                ]
             },
             "files": {
                 "config/packages/vigicorp_datatable.yaml": {
                     "contents": [
                         "vigicorp_datatable:",
-                        "    yadcf:",
+                        "    column_filters:",
                         "        active: true",
                         "#    datatables:",
                         ""
-                    ],
-                    "executable": false
-                },
-                "config/packages/asset_mapper.yaml": {
-                    "contents": [
-                        "framework:",
-                        "    asset_mapper:",
-                        "        # The paths to make available to the asset mapper.,",
-                        "        paths:",
-                        "            vendor/vigicorp/datatable-bundle/assets"
                     ],
                     "executable": false
                 },
