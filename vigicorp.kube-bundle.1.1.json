@@ -20,7 +20,7 @@
                     },
                     {
                         "file": "config/packages/security.yaml",
-                        "content": "         - { path: ^/health, roles: PUBLIC_ACCESS }",
+                        "content": "        - { path: ^/health, roles: PUBLIC_ACCESS }",
                         "position": "after_target",
                         "target": "    access_control:",
                         "warn_if_missing": true
@@ -38,7 +38,7 @@
                     "executable": false
                 }
             },
-            "ref": "c1ab599e2d765ac850c0fe701cc86eb1751f1c6b"
+            "ref": "7a426068c145198ccf2e3d29e16e1bb86139ced6"
         }
     }
 }
