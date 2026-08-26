@@ -1,0 +1,30 @@
+{
+    "manifests": {
+        "vigicorp/editorjs-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Vigicorp\\EditorJsBundle\\VigicorpEditorJsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "gitignore": [
+                    "/public/uploads/editorjs/"
+                ]
+            },
+            "files": {
+                "config/routes/vigicorp_editorjs.yaml": {
+                    "contents": [
+                        "vigicorp_editorjs:",
+                        "    resource: '@VigicorpEditorJsBundle/config/routes.php'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "f4a67c1c0e0c4bc9af0e73b1a64b6f5427d23a10"
+        }
+    }
+}
