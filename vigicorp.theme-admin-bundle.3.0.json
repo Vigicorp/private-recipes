@@ -121,6 +121,15 @@
                         "vigicorp_theme_admin:",
                         "    project_name: MON PROJET",
                         "    admin_role_enum_class: \"App\\\\Enum\\\\AdminRole\"",
+                        "",
+                        "    # Optional with versions of the bundle that support 2FA.",
+                        "    # Configure the matching firewall and user entity before enabling it.",
+                        "    # two_factor:",
+                        "    #     firewalls:",
+                        "    #         vigicorp_theme_admin:",
+                        "    #             enabled: false",
+                        "    #             app_name: 'My application'",
+                        "    #             default_sender: 'no-reply@example.com'",
                         ""
                     ],
                     "executable": false
@@ -148,7 +157,7 @@
                     "executable": false
                 }
             },
-            "ref": "54a3322f5y7p42vi2mjrz7y262r2r65cz4v5raxu"
+            "ref": "0056ef79fdbe6c4029536eb968f8c3316cdb991b"
         }
     }
 }
